@@ -1,10 +1,8 @@
-package com.controller;
+package com.gui;
 
 import java.util.Scanner;
 
-import com.tela.Telas;
-
-public class ControllerMenu {
+public class GuiMenu {
 	
 	Telas tela = new Telas();
 	Scanner scan = new Scanner(System.in);
@@ -16,12 +14,12 @@ public class ControllerMenu {
 		
 		switch (opt) {
 		case 1: {
-			ControllerCliente contCliente = new ControllerCliente();
+			GuiCliente contCliente = new GuiCliente();
 			contCliente.menuCliente();
 			break;
 		}
 		case 2: {
-			ControllerFuncionario contFunc = new ControllerFuncionario();
+			GuiFuncionario contFunc = new GuiFuncionario();
 			contFunc.menuFuncionario();
 			break;
 		}

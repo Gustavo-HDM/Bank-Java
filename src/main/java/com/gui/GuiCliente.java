@@ -1,13 +1,12 @@
-package com.controller;
+package com.gui;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 import com.model.Cliente;
-import com.tela.Telas;
 
-public class ControllerCliente {
+public class GuiCliente {
 	
 	Telas tela = new Telas();
 	Scanner scan = new Scanner(System.in);
@@ -31,30 +30,7 @@ public class ControllerCliente {
 			System.out.println("Cidade: ");
 			cliente.setCidade(scan.next());
 			
-			System.out.println("Qual o status da conta?");
-			System.out.println("[1] Padrão" + "\n" +
-							   "[2] Gold" + "\n" +
-							   "[3] Platinum" + "\n" +
-							   "[4] Diamante");
-			int resp = scan.nextInt();
-			switch (resp) {
-				case 1:
-					cliente.setContaStatus("Padrão");
-					break;
-				case 2:
-					cliente.setContaStatus("Gold");
-					break;
-				case 3:
-					cliente.setContaStatus("Platinum");
-					break;
-				case 4:
-					cliente.setContaStatus("Diamante");
-					break;
-				default:
-					System.out.println("Erro no cadastro: Resposta inválida, retornando ao menu");
-					menuCliente();
-					break;
-				}
+			
 			listaCliente.add(cliente);
 			System.out.println("Cadastro realizado com sucesso");
 			menuCliente();
@@ -64,14 +40,14 @@ public class ControllerCliente {
 			for (int i = 0; i < listaCliente.size(); i++) {
 				cliente = listaCliente.get(i);
 				System.out.println("Cliente " + (i + 1) + "\n");
-				cliente.consultar();
+				System.out.println(cliente.toString());;
 			}
 			menuCliente();
 			break;
 		}
 		
 		case 3: {
-			ControllerMenu contMenu = new ControllerMenu();
+			GuiMenu contMenu = new GuiMenu();
 			contMenu.menuPrincipal();
 			break;
 		}

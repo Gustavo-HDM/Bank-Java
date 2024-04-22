@@ -1,11 +1,9 @@
-package com.principal;
+package com.gui;
 
-import com.controller.ControllerMenu;
-
-public class app {
+public class App {
 
 	public static void main(String[] args) {
-		ControllerMenu contMenu = new ControllerMenu();
+		GuiMenu contMenu = new GuiMenu();
 		contMenu.menuPrincipal();
 	}
 	

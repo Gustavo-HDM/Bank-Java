@@ -1,13 +1,12 @@
-package com.controller;
+package com.gui;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 import com.model.Funcionario;
-import com.tela.Telas;
 
-public class ControllerFuncionario {
+public class GuiFuncionario {
 	
 	Telas tela = new Telas();
 	Scanner scan = new Scanner(System.in);
@@ -55,14 +54,14 @@ public class ControllerFuncionario {
 			for (int i = 0; i < listaFuncionario.size(); i++) {
 				funcionario = listaFuncionario.get(i);
 				System.out.println("Funcionário" + (i + 1) + "\n");
-				funcionario.consultar();
+				System.out.println(funcionario.toString());
 			}
 			menuFuncionario();
 			break;
 		}
 		
 		case 3: {
-			ControllerMenu contMenu = new ControllerMenu();
+			GuiMenu contMenu = new GuiMenu();
 			contMenu.menuPrincipal();
 			break;
 		}

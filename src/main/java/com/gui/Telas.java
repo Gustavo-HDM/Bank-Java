@@ -1,4 +1,4 @@
-package com.tela;
+package com.gui;
 
 public class Telas {
 

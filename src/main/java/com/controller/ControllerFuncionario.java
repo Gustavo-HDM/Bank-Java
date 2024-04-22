@@ -20,8 +20,7 @@ public class ControllerFuncionario {
 		int opt = scan.nextInt();
 		switch (opt) {
 		case 1: {
-			System.out.println("Preencha os dados a baixo para adicionar um novo funcionario" + "\n" +
-								"(Banco de dados não implementado os dados preenchidos irão sobrescrever os antigos)");
+			System.out.println("Preencha os dados a baixo para adicionar um novo funcionario" + "\n");
 			System.out.println("Nome: ");
 			funcionario.setNome(scan.next());
 			System.out.println("Idade: ");

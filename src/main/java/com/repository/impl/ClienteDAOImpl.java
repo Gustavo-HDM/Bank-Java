@@ -1,30 +1,42 @@
-package com.banco;
+package com.repository.impl;
 
 import java.util.ArrayList;
 //import java.util.ArrayList;
 import java.util.List;
 
 import com.model.Cliente;
-import com.model.Conta;
-import com.model.Funcionario;
-//import com.model.Pessoa;
+import com.repository.ClienteDAO;
 
-public class BancoDeDados{
+public class ClienteDAOImpl implements ClienteDAO{
 
 	private List<Cliente> listaCliente = new ArrayList<Cliente>();
-	private List<Funcionario> listaFuncionario = new ArrayList<Funcionario>();
-	private List<Conta> listaContas = new ArrayList<Conta>();
-	
+
 	public List<Cliente> getListaCliente() {
 		return listaCliente;
 	}
-	public List<Funcionario> getListaFuncionario() {
-		return listaFuncionario;
+
+	@Override
+	public void create(Cliente cliente) {
+		this.listaCliente.add(cliente);
 	}
-	public List<Conta> getListaContas() {
-		return listaContas;
+
+	@Override
+	public List<Cliente> readAll() {
+		return listaCliente;
 	}
-	
+
+	@Override
+	public void delete(String cpf) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void update(Cliente cliente, String cpf) {
+		// TODO Auto-generated method stub
+		
+	}
+
 //	List<Cliente> listaCliente = new ArrayList<>();
 //	List<Funcionario> listaFuncionario = new ArrayList<>();
 //	List<Conta> listaContas = new ArrayList<>();

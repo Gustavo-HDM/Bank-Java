@@ -4,7 +4,7 @@ public abstract class Conta {
 
 	private int agencia = 0000;
 	private Double saldo = 0.00;
-	private Cliente cliente;
+	private Cliente cliente; //CPF
 	
 	public Conta() {}
 	

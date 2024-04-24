@@ -2,17 +2,17 @@ package com.gui;
 
 import java.util.Scanner;
 
-import com.banco.BancoDeDados;
 import com.model.Cliente;
 import com.model.Conta;
 import com.model.ContaCorrente;
 import com.model.ContaPoupanca;
+import com.repository.impl.ClienteDAOImpl;
 
 public class GuiCliente {
 	
 	Telas tela = new Telas();
 	Scanner scan = new Scanner(System.in);
-	BancoDeDados bancoDados = new BancoDeDados();
+	ClienteDAOImpl bancoDados = new ClienteDAOImpl();
 	Cliente cliente = new Cliente();
 	Conta conta;
 	

@@ -14,13 +14,13 @@ public class GuiMenu {
 		
 		switch (opt) {
 		case 1: {
-			GuiCliente contCliente = new GuiCliente();
-			contCliente.menuCliente();
+			GuiCliente guiCliente = new GuiCliente();
+			guiCliente.menuCliente();
 			break;
 		}
 		case 2: {
-			GuiFuncionario contFunc = new GuiFuncionario();
-			contFunc.menuFuncionario();
+			GuiFuncionario guiFunc = new GuiFuncionario();
+			guiFunc.menuFuncionario();
 			break;
 		}
 		case 3: {

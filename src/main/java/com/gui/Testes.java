@@ -2,9 +2,9 @@ package com.gui;
 
 import java.util.Scanner;
 
-import com.model.Conta;
-import com.model.ContaCorrente;
-import com.model.ContaPoupanca;
+import com.model.Account;
+import com.model.CurrentAccount;
+import com.model.SavingsAccount;
 
 public class Testes {
 
@@ -17,16 +17,16 @@ public class Testes {
 		Double saldo = null;
 		System.out.println("Qual o saldo");
 		saldo = scan.nextDouble();
-		Conta conta = factoryContas(saldo);
+		Account conta = factoryContas(saldo);
 		System.out.println(conta.toString());
 	}
 	
-	public static Conta factoryContas(Double saldo) {
+	public static Account factoryContas(Double saldo) {
 		
 		if(saldo <= 1000) {
-			return new ContaCorrente(saldo);
+			return new CurrentAccount(saldo);
 		} else {
-			return new ContaPoupanca(saldo);
+			return new SavingsAccount(saldo);
 		}
 	}
 }

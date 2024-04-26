@@ -4,25 +4,25 @@ import java.util.ArrayList;
 //import java.util.ArrayList;
 import java.util.List;
 
-import com.model.Cliente;
-import com.repository.ClienteDAO;
+import com.model.Client;
+import com.repository.ClientDAO;
 
-public class ClienteDAOImpl implements ClienteDAO{
+public class ClientDAOImpl implements ClientDAO{
 
-	private List<Cliente> listaCliente = new ArrayList<Cliente>();
+	private List<Client> clientList = new ArrayList<Client>();
 
-	public List<Cliente> getListaCliente() {
-		return listaCliente;
+	public List<Client> getClientList() {
+		return clientList;
 	}
 
 	@Override
-	public void create(Cliente cliente) {
-		this.listaCliente.add(cliente);
+	public void create(Client client) {
+		this.clientList.add(client);
 	}
 
 	@Override
-	public List<Cliente> readAll() {
-		return listaCliente;
+	public List<Client> readAll() {
+		return clientList;
 	}
 
 	@Override
@@ -32,7 +32,7 @@ public class ClienteDAOImpl implements ClienteDAO{
 	}
 
 	@Override
-	public void update(Cliente cliente, String cpf) {
+	public void update(Client cliente, String cpf) {
 		// TODO Auto-generated method stub
 		
 	}

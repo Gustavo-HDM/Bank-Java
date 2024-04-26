@@ -1,11 +1,11 @@
 package com.study;
 
-import com.model.Cliente;
+import com.model.Client;
 
 public class MainConstrutor {
 
 	
 	public static void main(String[] args) {
-		Cliente cliente = new Cliente("123485789");
+		Client cliente = new Client("123485789");
 	}
 }

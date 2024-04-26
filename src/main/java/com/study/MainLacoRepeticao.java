@@ -3,16 +3,16 @@ package com.study;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.model.Cliente;
+import com.model.Client;
 
 public class MainLacoRepeticao {
 
 	public static void main(String[] args) {
-		List<Cliente> clientes = new ArrayList<>();
-		Cliente c1 = new Cliente("Gustavo");
-		Cliente c2 = new Cliente("Antonio");
-		Cliente c3 = new Cliente("Rodrigo");
-		Cliente c4 = new Cliente("Marques");
+		List<Client> clientes = new ArrayList<>();
+		Client c1 = new Client("Gustavo");
+		Client c2 = new Client("Antonio");
+		Client c3 = new Client("Rodrigo");
+		Client c4 = new Client("Marques");
 		
 		clientes.add(c1);
 		clientes.add(c2);
@@ -20,13 +20,13 @@ public class MainLacoRepeticao {
 		clientes.add(c4);
 		
 		for(int i = 0; i < clientes.size(); i++) {
-			Cliente cliente = clientes.get(i);
+			Client cliente = clientes.get(i);
 			System.out.println(cliente.getNome());
 		}
 		
 		System.out.println("\nfor each\n");
 		
-		for(Cliente cliente : clientes) {
+		for(Client cliente : clientes) {
 			System.out.println(cliente.getNome());
 		}
 		

@@ -9,8 +9,8 @@ import com.repository.ClientDAO;
 
 public class ClientDAOImpl implements ClientDAO{
 
-	private List<Client> clientList = new ArrayList<Client>();
-
+	private static List<Client> clientList = new ArrayList<Client>();
+	
 	public List<Client> getClientList() {
 		return clientList;
 	}

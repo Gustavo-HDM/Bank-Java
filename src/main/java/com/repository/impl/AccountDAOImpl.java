@@ -1,13 +1,14 @@
 package com.repository.impl;
 
 import java.util.HashMap;
+import java.util.Map;
 
 import com.model.Account;
 import com.repository.AccountDAO;
 
 public class AccountDAOImpl implements AccountDAO{
 
-	private HashMap<Account, String> accountHash = new HashMap<>();
+	private static Map<Account, String> accountHash = new HashMap<>();
 	
 	
 	@Override
@@ -16,7 +17,7 @@ public class AccountDAOImpl implements AccountDAO{
 	}
 	
 	@Override
-	public HashMap<Account, String> readAll() {
+	public Map<Account, String> readAll() {
 		return accountHash;
 	}
 

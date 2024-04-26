@@ -1,6 +1,6 @@
 package com.service.impl;
 
-import java.util.HashMap;
+import java.util.Map;
 
 import com.model.Account;
 import com.repository.AccountDAO;
@@ -17,7 +17,7 @@ public class AccountServiceImpl implements AccountService{
 	}
 
 	@Override
-	public HashMap<Account, String> readAll() {
+	public Map<Account, String> readAll() {
 		return accountDAO.readAll();
 	}
 

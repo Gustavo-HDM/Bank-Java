@@ -1,6 +1,6 @@
 package com.controller;
 
-import java.util.HashMap;
+import java.util.Map;
 
 import com.model.Account;
 import com.service.AccountService;
@@ -14,7 +14,7 @@ public class AccountController {
 		accountService.create(account, cpf);
 	}
 	
-	public HashMap<Account, String> readAll() {
+	public Map<Account, String> readAll() {
 		return accountService.readAll();
 	}
 }

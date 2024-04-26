@@ -5,7 +5,7 @@ import com.repository.EmployeeDAO;
 
 public class EmployeeDAOImpl implements EmployeeDAO{
 	
-	Employee[] employeeList = new Employee[];
+	private static Employee[] employeeList = new Employee[150];
 
 	@Override
 	public void create(Employee employee) {

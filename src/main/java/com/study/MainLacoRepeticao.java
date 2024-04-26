@@ -8,7 +8,7 @@ import com.model.Client;
 public class MainLacoRepeticao {
 
 	public static void main(String[] args) {
-		List<Client> clientes = new ArrayList<>();
+		/*List<Client> clientes = new ArrayList<>();
 		Client c1 = new Client("Gustavo");
 		Client c2 = new Client("Antonio");
 		Client c3 = new Client("Rodrigo");
@@ -47,7 +47,7 @@ public class MainLacoRepeticao {
 			System.out.println(contador);
 			contador++;
 		}
-		
+		*/
 		
 		
 	}

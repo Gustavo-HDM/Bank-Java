@@ -6,15 +6,12 @@ import com.repository.EmployeeDAO;
 public class EmployeeDAOImpl implements EmployeeDAO{
 	
 	private static Employee[] employeeList = new Employee[150];
+	private static int counter = 0;
 
 	@Override
 	public void create(Employee employee) {
-		for (int i = 0; i < employeeList.length; i++) {
-			if(employeeList[i] == null) {
-				employeeList[i] = employee;
-				break;
-			}
-		}
+		employeeList[counter] = employee;
+		counter++;
 	}
 
 	@Override

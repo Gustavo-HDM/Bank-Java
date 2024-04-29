@@ -1,3 +1,7 @@
-/target/
-/.metadata/
+target
+.metadata
+.settings
+.classpath
+.project
+pom
 .classpath

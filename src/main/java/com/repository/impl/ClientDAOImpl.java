@@ -26,16 +26,18 @@ public class ClientDAOImpl implements ClientDAO{
 	}
 
 	@Override
-	public void delete(String cpf) {
+	public void delete(String key) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void update(Client cliente, String cpf) {
+	public void update(Client client, String key) {
 		// TODO Auto-generated method stub
 		
 	}
+
+	
 
 //	List<Cliente> listaCliente = new ArrayList<>();
 //	List<Funcionario> listaFuncionario = new ArrayList<>();

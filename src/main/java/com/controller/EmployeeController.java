@@ -6,7 +6,7 @@ import com.service.impl.EmployeeServiceImpl;
 
 public class EmployeeController {
 
-	EmployeeService employeeService = new EmployeeServiceImpl();
+	private EmployeeService employeeService = new EmployeeServiceImpl();
 	
 	public void create(Employee employee) {
 		employeeService.create(employee);

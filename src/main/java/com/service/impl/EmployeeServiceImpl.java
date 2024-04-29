@@ -7,7 +7,7 @@ import com.service.EmployeeService;
 
 public class EmployeeServiceImpl implements EmployeeService {
 
-	EmployeeDAO employeeDAO = new EmployeeDAOImpl();
+	private EmployeeDAO employeeDAO = new EmployeeDAOImpl();
 	
 	@Override
 	public void create(Employee employee) {

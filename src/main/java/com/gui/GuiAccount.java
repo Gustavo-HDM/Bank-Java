@@ -1,5 +1,6 @@
 package com.gui;
 
+import java.util.Map;
 import java.util.Scanner;
 
 import com.controller.AccountController;
@@ -35,25 +36,49 @@ public class GuiAccount {
 				System.out.println("Resposta inválida");
 				accountMenu();
 			}
-			System.out.print("Defina um saldo inicial: ");
+			System.out.println("n° da Agencia");
+			account.setAgency(scan.nextInt());
+			System.out.print("Saldo inicial: ");
 			account.setBalance(scan.nextDouble());
 			System.out.println("Selecione um cliente para associa a conta: ");
 			listingClient();
 			int clientIndex = scan.nextInt();
-			Client client = controllerClient.readAll().get(clientIndex);
+			Client client = controllerClient.readAll().get(clientIndex - 1);
 			controllerAccount.create(account, client.getCpf());
 			accountMenu();
 			break;
 		}
-		
+
 		case 2: {
-			System.out.println(controllerAccount.readAll());
+			listing();
+			accountMenu();
 			break;
 		}
 		
-		default: 
-			System.out.println("Resposta Invalida");
+		case 3: {
+			mainMenu.mainMenu();
+			break;
+		}
+
+		default:
+			System.out.println("Opcao Invalida");
 			accountMenu();
+		}
+	}
+
+	private void listing() {
+		for (Map.Entry<Account, String> entry : controllerAccount.readAll().entrySet()) {
+
+			account = entry.getKey();
+			String cpf = entry.getValue();
+
+			System.out.print("\n" + account.toString() + "\nCliente associado a conta: ");
+			for (Client client : controllerClient.readAll()) {
+				if (client.getCpf().equals(cpf)) {
+					System.out.println(client.toString() + "\n-----------------------------------------");
+				}
+			}
+
 		}
 	}
 

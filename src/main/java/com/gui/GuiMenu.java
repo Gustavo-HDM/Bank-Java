@@ -2,8 +2,6 @@ package com.gui;
 
 import java.util.Scanner;
 
-import com.controller.ClientController;
-
 public class GuiMenu {
 
 	Scanner scan = new Scanner(System.in);
@@ -21,7 +19,7 @@ public class GuiMenu {
 		}
 		case 2: {
 			GuiEmployee guiFunc = new GuiEmployee();
-			guiFunc.menuFuncionario();
+			guiFunc.employeeMenu();
 			break;
 		}
 		case 3: {
@@ -30,12 +28,12 @@ public class GuiMenu {
 			break;
 		}
 		case 4: {
-			
+			System.out.println("Saindo do sistema");
 			break;
 		}
 		default:
-			System.out.println("Opção Inválida, retornando ao menu principal");
+			System.out.println("Opção Inválida");
+			mainMenu();
 		}
-		scan.close();
 	}
 }

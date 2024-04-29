@@ -1,17 +1,17 @@
 package com.gui;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
+import com.controller.EmployeeController;
 import com.model.Employee;
 
 public class GuiEmployee {
 
 	Scanner scan = new Scanner(System.in);
-	List<Employee> employeeList = new ArrayList<>();
+	GuiMenu mainMenu = new GuiMenu();
+	EmployeeController controller = new EmployeeController();
 
-	public void menuFuncionario() {
+	public void employeeMenu() {
 		
 		System.out.println("\nMenu Funcionario" + "\n" + "[1] Adicionar" + "\n" + "[2] Consultar" + "\n" + "[3] Voltar");
 		int opt = scan.nextInt();
@@ -20,16 +20,18 @@ public class GuiEmployee {
 		case 1: {
 			Employee employee = new Employee();
 			System.out.println("Preencha os dados a baixo para adicionar um novo funcionario" + "\n");
-			System.out.println("Nome: ");
+			System.out.print("Nome: ");
 			employee.setName(scan.next());
-			System.out.println("Idade: ");
+			System.out.print("Idade: ");
 			employee.setAge(scan.nextInt());
-			System.out.println("Cpf: ");
+			System.out.print("Cpf: ");
 			employee.setCpf(scan.next());
-			System.out.println("Cidade: ");
+			System.out.print("Cidade: ");
 			employee.setCity(scan.next());
-			System.out.println("Função: ");
+			System.out.print("Função: ");
 			employee.setFunction(scan.next());
+			System.out.print("Salario: ");
+			employee.setSalary(scan.nextDouble());
 			System.out.println("Qual o seu status?");
 			System.out.println("[1] Ativo" + "\n" + "[2] Inativo");
 			int resp = scan.nextInt();
@@ -39,34 +41,37 @@ public class GuiEmployee {
 				employee.setStatus(false);
 			} else {
 				System.out.println("Erro no cadastro: Resposta inválida, retornando ao menu");
-				menuFuncionario();
+				employeeMenu();
 			}
-
-			employeeList.add(employee);
-			System.out.println("Cadastro realizado com sucesso");
-			menuFuncionario();
+			controller.create(employee);
+			System.out.println("\nCadastro realizado com sucesso");
+			employeeMenu();
 			break;
 		}
 		case 2: {
-			
-//			for (int i = 0; i < employeeList.size(); i++) {
-//				employee = employeeList.get(i);
-//				System.out.println("Funcionário" + (i + 1) + "\n");
-//				System.out.println(employeeList.toString());
-//			}
-			menuFuncionario();
+			listing();
+			employeeMenu();
 			break;
 		}
 
 		case 3: {
-			GuiMenu contMenu = new GuiMenu();
-			contMenu.mainMenu();
+			mainMenu.mainMenu();
 			break;
 		}
 		default:
-			System.out.println("Opção Inválida, retornando ao menu cliente");
-
+			System.out.println("Opcao Inválida");
+			employeeMenu();
 		}
-		scan.close();
 	}
+	
+	private void listing() {
+		for(int i = 0; i < controller.readAll().length; i++) {
+			Employee employee = controller.readAll()[i];
+			if (employee != null) {
+				System.out.println(employee.toString());
+			}
+		}
+	}
+	
+	
 }

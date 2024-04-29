@@ -29,15 +29,13 @@ public class GuiClient {
 			System.out.print("Cidade: ");
 			client.setCity(scan.next());
 			controller.create(client);
-			System.out.println("\nCadastro realizado com sucesso\n");
+			System.out.println("\nCadastro realizado com sucesso");
 			clientMenu();
 			break;
 		}
 	
 		case 2: {
-			//listing();
-			
-			System.out.println(controller.readAll().get(0));
+			listing();
 			clientMenu();
 			break;
 		}
@@ -48,7 +46,7 @@ public class GuiClient {
 		}
 
 		default:
-			System.out.println("Resposta inválida\n");
+			System.out.println("Opcao invalida\n");
 			clientMenu();
 		}
 	}

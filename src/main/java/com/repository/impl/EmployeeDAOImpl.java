@@ -9,13 +9,17 @@ public class EmployeeDAOImpl implements EmployeeDAO{
 
 	@Override
 	public void create(Employee employee) {
-		
+		for (int i = 0; i < employeeList.length; i++) {
+			if(employeeList[i] == null) {
+				employeeList[i] = employee;
+				break;
+			}
+		}
 	}
 
 	@Override
 	public Employee[] readAll() {
-		// TODO Auto-generated method stub
-		return null;
+		return employeeList;
 	}
 
 	@Override

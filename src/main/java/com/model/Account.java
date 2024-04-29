@@ -32,7 +32,5 @@ public abstract class Account {
 	}
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
-	}
-	
-	
+	}	
 }

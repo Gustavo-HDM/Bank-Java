@@ -17,7 +17,7 @@ public class ClientDAOImpl implements ClientDAO{
 
 	@Override
 	public void create(Client client) {
-		this.clientList.add(client);
+		ClientDAOImpl.clientList.add(client);
 	}
 
 	@Override

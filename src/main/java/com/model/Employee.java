@@ -34,9 +34,12 @@ public class Employee extends Person{
 	
 	@Override
 	public String toString() {
-		return "Funcionario [nome=" + super.getName() + ", idade=" + super.getAge() + ", cidade=" + super.getCity() + ", salario=" + salary
-				+ ", funcao=" + this.function + ", cpf=" + super.getCpf() + ", status=" + this.status + ", Nacionalidade: "+ Employee.NACIONALITY + "]";
+		
+		return "Nome: " + super.getName() +
+				"\nIdade: " + super.getAge() +
+				"\nCidade: " + super.getCity() +
+				"\nFuncao: " + getFunction() + 
+				"\nSalario: " + getSalary() +
+				"\nNacionalidade: " + Employee.NACIONALITY;
 	}
-	
-	
 }

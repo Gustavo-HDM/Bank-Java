@@ -17,7 +17,7 @@ public class SavingsAccount extends Account{
 	@Override
 	public String toString() {
 		return 	"Agencia: " + super.getAgency() +
-				"Saldo atual: " + super.getBalance() +
-				"Tipo Conta : " + SavingsAccount.ACCOUNT_TYPE;
+				"\nSaldo atual: " + super.getBalance() +
+				"\nTipo Conta : " + SavingsAccount.ACCOUNT_TYPE;
 	}
 }

@@ -1,5 +1,7 @@
 package com.service.impl;
 
+import java.util.List;
+
 import com.model.Employee;
 import com.repository.EmployeeDAO;
 import com.repository.impl.EmployeeDAOImpl;
@@ -15,7 +17,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 	}
 
 	@Override
-	public Employee[] readAll() {
+	public List<Employee> readAll() {
 		return employeeDAO.readAll();
 	}
 
@@ -29,6 +31,11 @@ public class EmployeeServiceImpl implements EmployeeService {
 	public void update(Employee employee, String cpf) {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public void createAccount(Employee object, String key) {
+		// TODO Auto-generated method stub
 	}
 
 }

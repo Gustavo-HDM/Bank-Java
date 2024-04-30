@@ -11,7 +11,7 @@ public class AccountController {
 	private AccountService accountService = new AccountServiceImpl();
 	
 	public void create(Account account, String cpf) {
-		accountService.create(account, cpf);
+		accountService.createAccount(account, cpf);
 	}
 	
 	public Map<Account, String> readAll() {

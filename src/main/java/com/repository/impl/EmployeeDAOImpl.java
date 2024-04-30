@@ -1,21 +1,22 @@
 package com.repository.impl;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.model.Employee;
 import com.repository.EmployeeDAO;
 
 public class EmployeeDAOImpl implements EmployeeDAO{
 	
-	private static Employee[] employeeList = new Employee[150];
-	private static int counter = 0;
+	private static List<Employee> employeeList = new ArrayList<>();
 
 	@Override
 	public void create(Employee employee) {
-		employeeList[counter] = employee;
-		counter++;
+		employeeList.add(employee);
 	}
 
 	@Override
-	public Employee[] readAll() {
+	public List<Employee> readAll() {
 		return employeeList;
 	}
 
@@ -31,4 +32,8 @@ public class EmployeeDAOImpl implements EmployeeDAO{
 		
 	}
 
+	@Override
+	public void createAccount(Employee object, String key) {
+		// TODO Auto-generated method stub
+	}
 }

@@ -1,7 +1,6 @@
-package com.repository;
+package com.service;
 
-public interface GenericDAO<T, E, L> {
-	
+public interface GenericService <T, E, L> {
 	public void createAccount(T object, E key);
 	public void create(T object);
 	public void delete(E key);

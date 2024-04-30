@@ -36,7 +36,7 @@ public class GuiAccount {
 				System.out.println("Resposta inválida");
 				accountMenu();
 			}
-			System.out.println("n° da Agencia");
+			System.out.println("n da Agencia");
 			account.setAgency(scan.nextInt());
 			System.out.print("Saldo inicial: ");
 			account.setBalance(scan.nextDouble());

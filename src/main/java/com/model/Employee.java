@@ -35,7 +35,7 @@ public class Employee extends Person{
 	@Override
 	public String toString() {
 		
-		return "Nome: " + super.getName() +
+		return "\nNome: " + super.getName() +
 				"\nIdade: " + super.getAge() +
 				"\nCidade: " + super.getCity() +
 				"\nFuncao: " + getFunction() + 

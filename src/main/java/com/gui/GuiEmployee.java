@@ -12,10 +12,11 @@ public class GuiEmployee {
 	EmployeeController controller = new EmployeeController();
 
 	public void employeeMenu() {
-		
-		System.out.println("\nMenu Funcionario" + "\n" + "[1] Adicionar" + "\n" + "[2] Consultar" + "\n" + "[3] Voltar");
+
+		System.out
+				.println("\nMenu Funcionario" + "\n" + "[1] Adicionar" + "\n" + "[2] Consultar" + "\n" + "[3] Voltar");
 		int opt = scan.nextInt();
-		
+
 		switch (opt) {
 		case 1: {
 			Employee employee = new Employee();
@@ -63,15 +64,9 @@ public class GuiEmployee {
 			employeeMenu();
 		}
 	}
-	
+
 	private void listing() {
-		for(int i = 0; i < controller.readAll().length; i++) {
-			Employee employee = controller.readAll()[i];
-			if (employee != null) {
-				System.out.println(employee.toString());
-			}
-		}
+		for (Employee employee : controller.readAll())
+			System.out.println(employee.toString());
 	}
-	
-	
 }

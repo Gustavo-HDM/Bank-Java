@@ -1,5 +1,7 @@
 package com.controller;
 
+import java.util.List;
+
 import com.model.Employee;
 import com.service.EmployeeService;
 import com.service.impl.EmployeeServiceImpl;
@@ -12,7 +14,7 @@ public class EmployeeController {
 		employeeService.create(employee);
 	}
 
-	public Employee[] readAll() {
+	public List<Employee> readAll() {
 		return employeeService.readAll();
 	}
 	

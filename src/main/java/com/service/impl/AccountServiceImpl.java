@@ -12,8 +12,8 @@ public class AccountServiceImpl implements AccountService{
 	private AccountDAO accountDAO = new AccountDAOImpl();
 	
 	@Override
-	public void create(Account account, String cpf) {
-		this.accountDAO.create(account, cpf);
+	public void createAccount(Account Object, String key) {
+		this.accountDAO.createAccount(Object, key);		
 	}
 
 	@Override
@@ -31,6 +31,12 @@ public class AccountServiceImpl implements AccountService{
 	public void update(Account account, String cpf) {
 		// TODO Auto-generated method stub
 		
+	}
+
+	//REVER SE TEM ALGUMA FORMA MAIS OTIMIZADA
+	@Override
+	public void create(Account object) {
+		// TODO Auto-generated method stub
 	}
 
 }

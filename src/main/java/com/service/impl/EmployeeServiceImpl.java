@@ -32,10 +32,4 @@ public class EmployeeServiceImpl implements EmployeeService {
 		// TODO Auto-generated method stub
 		
 	}
-
-	@Override
-	public void createAccount(Employee object, String key) {
-		// TODO Auto-generated method stub
-	}
-
 }

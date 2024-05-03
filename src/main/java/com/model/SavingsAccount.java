@@ -2,10 +2,18 @@ package com.model;
 
 public class SavingsAccount extends Account{
 
-	private static final String ACCOUNT_TYPE = "Conta Poupança";
-
+	private Double rendMensal;
+	
+	public Double getRendMensal() {
+		return rendMensal;
+	}
+	
+	public void setRendMensal(Double rendMensal) {
+		this.rendMensal = rendMensal;
+	}
+	
 	public SavingsAccount() {}
-
+	
 	public SavingsAccount(int agency, Double balance, String cpf) {
 		super(agency, balance, cpf);
 	}
@@ -18,6 +26,13 @@ public class SavingsAccount extends Account{
 	public String toString() {
 		return 	"Agencia: " + super.getAgency() +
 				"\nSaldo atual: " + super.getBalance() +
-				"\nTipo Conta : " + SavingsAccount.ACCOUNT_TYPE;
+				"\nTipo Conta : " + getAccountType().name();
 	}
+
+	@Override
+	public AccountType getAccountType() {
+		return AccountType.POUPANCA;
+	}
+
+
 }

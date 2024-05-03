@@ -32,5 +32,14 @@ public abstract class Account {
 	}
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
-	}	
+	}
+	
+	public abstract AccountType getAccountType();
+	
+	@Override
+	public String toString() {
+		return 	"Agencia: " + getAgency() +
+				"\nSaldo atual: " + getBalance() +
+				"\nTipo Conta : " + getAccountType();
+	}
 }

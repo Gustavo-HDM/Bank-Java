@@ -6,6 +6,7 @@ import java.util.Scanner;
 import com.controller.AccountController;
 import com.controller.ClientController;
 import com.model.Account;
+import com.model.AccountType;
 import com.model.Client;
 import com.model.CurrentAccount;
 import com.model.SavingsAccount;
@@ -26,12 +27,18 @@ public class GuiAccount {
 
 		switch (opt) {
 		case 1: {
-			System.out.println("Selecione o tipo da conta:\n" + "[1] Conta Corrente\n" + "[2] Conta Poupanca\n");
+			System.out.println("Selecione o tipo da conta:\n" + "[1] Conta Corrente\n" + "[2] Conta Poupanca\n" + "[3] Conta Salario\n" + "[4] Conta Pagamento\n");
 			int typeResp = scan.nextInt();
+			
+			//TODO MUDAR PARA UM SWITCH CASE ?
 			if (typeResp == 1) {
 				account = new CurrentAccount();
 			} else if (typeResp == 2) {
 				account = new SavingsAccount();
+			} else if (typeResp == 3){
+				//account.setAccountType(AccountType.POUPANCA);
+			} else if (typeResp == 4) {
+				//account.setAccountType(AccountType.PAGAMENTOS);
 			} else {
 				System.out.println("Resposta inválida");
 				accountMenu();
@@ -44,11 +51,12 @@ public class GuiAccount {
 			listingClient();
 			int clientIndex = scan.nextInt();
 			Client client = controllerClient.readAll().get(clientIndex - 1);
-			controllerAccount.create(account, client.getCpf());
+			account.setCpf(client.getCpf());
+			controllerAccount.create(account);
 			accountMenu();
 			break;
 		}
-
+		
 		case 2: {
 			listing();
 			accountMenu();

@@ -37,13 +37,6 @@ public class ClientDAOImpl implements ClientDAO{
 		
 	}
 
-	@Override
-	public void createAccount(Client Object, String key) {
-		// TODO Auto-generated method stub
-	}
-
-	
-
 //	List<Cliente> listaCliente = new ArrayList<>();
 //	List<Funcionario> listaFuncionario = new ArrayList<>();
 //	List<Conta> listaContas = new ArrayList<>();

@@ -11,8 +11,9 @@ public class AccountDAOImpl implements AccountDAO{
 	private static Map<Account, String> accountHash = new HashMap<>();
 	
 	@Override
-	public void createAccount(Account object, String key) {
-		accountHash.put(object, key);	
+	public void create(Account object) {
+		accountHash.put(object, object.getCpf());
+		
 	}
 	
 	@Override
@@ -34,11 +35,6 @@ public class AccountDAOImpl implements AccountDAO{
 	
 	//REVER SE TEM ALGUMA FORMA MAIS OTIMIZADA
 	
-	@Override
-	public void create(Account object) {
-		// TODO Auto-generated method stub
-		
-	}
 
 	
 }

@@ -10,8 +10,8 @@ public class AccountController {
 
 	private AccountService accountService = new AccountServiceImpl();
 	
-	public void create(Account account, String cpf) {
-		accountService.createAccount(account, cpf);
+	public void create(Account account) {
+		accountService.create(account);
 	}
 	
 	public Map<Account, String> readAll() {

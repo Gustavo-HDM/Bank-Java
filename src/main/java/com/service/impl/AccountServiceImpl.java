@@ -12,10 +12,9 @@ public class AccountServiceImpl implements AccountService{
 	private AccountDAO accountDAO = new AccountDAOImpl();
 	
 	@Override
-	public void createAccount(Account Object, String key) {
-		this.accountDAO.createAccount(Object, key);		
+	public void create(Account object) {
+		this.accountDAO.create(object);		
 	}
-
 	@Override
 	public Map<Account, String> readAll() {
 		return accountDAO.readAll();
@@ -34,9 +33,6 @@ public class AccountServiceImpl implements AccountService{
 	}
 
 	//REVER SE TEM ALGUMA FORMA MAIS OTIMIZADA
-	@Override
-	public void create(Account object) {
-		// TODO Auto-generated method stub
-	}
+
 
 }

@@ -2,8 +2,6 @@ package com.model;
 
 public class CurrentAccount extends Account{
 
-	private static final String ACCOUNT_TYPE = "Conta Corrente";
-	
 	public CurrentAccount() {}
 	
 	public CurrentAccount(int agency, Double balance, String cpf) {
@@ -18,6 +16,11 @@ public class CurrentAccount extends Account{
 	public String toString() {
 		return 	"Agencia: " + super.getAgency() +
 				"\nSaldo atual: " + super.getBalance() +
-				"\nTipo Conta : " + CurrentAccount.ACCOUNT_TYPE;
+				"\nTipo Conta : " + getAccountType().name();
+	}
+
+	@Override
+	public AccountType getAccountType() {
+		return AccountType.CORRENTE;
 	}
 }

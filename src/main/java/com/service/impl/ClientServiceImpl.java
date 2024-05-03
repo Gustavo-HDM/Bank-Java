@@ -32,9 +32,4 @@ public class ClientServiceImpl implements ClientService{
 		// TODO Auto-generated method stub
 		
 	}
-
-	@Override
-	public void createAccount(Client object, String key) {
-		
-	}
 }

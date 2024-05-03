@@ -6,10 +6,10 @@ import java.util.Scanner;
 import com.controller.AccountController;
 import com.controller.ClientController;
 import com.model.Account;
-import com.model.AccountType;
 import com.model.Client;
 import com.model.CurrentAccount;
 import com.model.SavingsAccount;
+import com.util.AccountType;
 
 public class GuiAccount {
 
@@ -29,6 +29,13 @@ public class GuiAccount {
 		case 1: {
 			System.out.println("Selecione o tipo da conta:\n" + "[1] Conta Corrente\n" + "[2] Conta Poupanca\n" + "[3] Conta Salario\n" + "[4] Conta Pagamento\n");
 			int typeResp = scan.nextInt();
+			
+			for(AccountType type : AccountType.values()) {
+				if(type.getMenuValue() == typeResp) {
+					account = type.getAccountImpl();
+					break;
+				}
+			}
 			
 			//TODO MUDAR PARA UM SWITCH CASE ?
 			if (typeResp == 1) {

@@ -1,5 +1,7 @@
 package com.model;
 
+import com.util.AccountType;
+
 public class SavingsAccount extends Account{
 
 	private Double rendMensal;

@@ -1,5 +1,7 @@
 package com.model;
 
+import com.util.AccountType;
+
 public abstract class Account {
 
 	private int agency = 0000;

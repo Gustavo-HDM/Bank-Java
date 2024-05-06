@@ -33,8 +33,4 @@ public class AccountDAOImpl implements AccountDAO{
 		
 	}
 	
-	//REVER SE TEM ALGUMA FORMA MAIS OTIMIZADA
-	
-
-	
 }

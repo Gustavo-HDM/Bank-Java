@@ -23,13 +23,12 @@ public class ClientServiceImpl implements ClientService{
 
 	@Override
 	public void delete(String cpf) {
-		// TODO Auto-generated method stub
-		
+		this.clientDAO.delete(cpf);
 	}
 
 	@Override
 	public void update(Client cliente, String cpf) {
-		// TODO Auto-generated method stub
+		this.clientDAO.update(cliente, cpf);
 		
 	}
 }

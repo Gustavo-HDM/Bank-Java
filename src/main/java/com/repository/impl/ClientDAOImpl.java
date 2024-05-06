@@ -27,14 +27,22 @@ public class ClientDAOImpl implements ClientDAO{
 
 	@Override
 	public void delete(String key) {
-		// TODO Auto-generated method stub
-		
+		for (Client client : clientList) {
+			if(client.getCpf().equals(key)) {
+				clientList.remove(client);
+			}
+		}
 	}
 
 	@Override
 	public void update(Client client, String key) {
-		// TODO Auto-generated method stub
-		
+		for (Client clientListed : clientList) {
+			int i = 0;
+			if(clientListed.getCpf().equals(key)) {
+				clientList.set(i, client);
+			}
+			i++;
+		}
 	}
 
 //	List<Cliente> listaCliente = new ArrayList<>();

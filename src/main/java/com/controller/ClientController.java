@@ -17,4 +17,12 @@ public class ClientController {
 	public List<Client> readAll() {
 		return clientService.readAll();
 	}
+	
+	public void delete(String key) {
+		clientService.delete(key);
+	}
+	
+	public void update(Client client, String key) {
+		clientService.update(client, key);
+	}
 }

@@ -22,7 +22,7 @@ public class GuiAccount {
 	public void accountMenu() {
 
 		System.out.println("\nEscolha uma opção a baixo\n" + "[1] Associar uma conta a um cliente\n"
-				+ "[2] Lista de Contas\n" + "[3] Voltar");
+				+ "[2] Lista de Contas\n" + "[4] Voltar");
 		int opt = scan.nextInt();
 
 		switch (opt) {
@@ -37,19 +37,18 @@ public class GuiAccount {
 				}
 			}
 			
-			//TODO MUDAR PARA UM SWITCH CASE ?
-			if (typeResp == 1) {
-				account = new CurrentAccount();
-			} else if (typeResp == 2) {
-				account = new SavingsAccount();
-			} else if (typeResp == 3){
-				//account.setAccountType(AccountType.POUPANCA);
-			} else if (typeResp == 4) {
-				//account.setAccountType(AccountType.PAGAMENTOS);
-			} else {
-				System.out.println("Resposta inválida");
-				accountMenu();
-			}
+//			if (typeResp == 1) {
+//				account = new CurrentAccount();
+//			} else if (typeResp == 2) {
+//				account = new SavingsAccount();
+//			} else if (typeResp == 3){
+//				//account.setAccountType(AccountType.POUPANCA);
+//			} else if (typeResp == 4) {
+//				//account.setAccountType(AccountType.PAGAMENTOS);
+//			} else {
+//				System.out.println("Resposta inválida");
+//				accountMenu();
+//			}
 			System.out.println("n da Agencia");
 			account.setAgency(scan.nextInt());
 			System.out.print("Saldo inicial: ");

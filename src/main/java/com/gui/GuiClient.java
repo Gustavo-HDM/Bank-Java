@@ -68,16 +68,11 @@ public class GuiClient {
 	}
 
 	private void listing() {
-		
-		for (int i = 1; i <= controller.readAll().size(); i ++) {
-			Client client = controller.readAll().get(i);
+		int i = 1;
+		for (Client client : controller.readAll()) {
 			System.out.println("[" + i + "]" + client.toString());
+			i++;
 		}
-//		for (Client client : controller.readAll()) {
-//			int i = 1;
-//			System.out.println("[" + i + "]" + client.toString());
-//			i++;
-//		}
 	}
 	
 	private void remove() {

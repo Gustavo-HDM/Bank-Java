@@ -36,12 +36,11 @@ public class ClientDAOImpl implements ClientDAO{
 
 	@Override
 	public void update(Client client, String key) {
-		for (Client clientListed : clientList) {
-			int i = 0;
+		for (int i = 0; i < clientList.size(); i++) {
+			Client clientListed = clientList.get(i);
 			if(clientListed.getCpf().equals(key)) {
 				clientList.set(i, client);
 			}
-			i++;
 		}
 	}
 

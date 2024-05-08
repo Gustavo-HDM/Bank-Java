@@ -4,12 +4,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.model.Account;
-import com.model.Client;
 import com.repository.AccountDAO;
 
 public class AccountDAOImpl implements AccountDAO{
 
-	private static HashMap<String, Account> accountMap = new HashMap<>();
+	private static Map<String, Account> accountMap = new HashMap<>();
 	
 	@Override
 	public void create(Account object) {

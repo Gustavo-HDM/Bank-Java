@@ -72,11 +72,9 @@ public class GuiAccount {
 	}
 	
 	private void listing() {
-		for (Map.Entry<Account, String> entry : controllerAccount.readAll().entrySet()) {
-
-			account = entry.getKey();
-			String cpf = entry.getValue();
-
+		for (Map.Entry<String, Account> entry : controllerAccount.readAll().entrySet()) {
+			String cpf = entry.getKey();
+			account = entry.getValue();
 			System.out.print("\n" + account.toString() + "\nCliente associado a conta: ");
 			for (Client client : controllerClient.readAll()) {
 				if (client.getCpf().equals(cpf)) {

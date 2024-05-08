@@ -14,7 +14,15 @@ public class AccountController {
 		accountService.create(account);
 	}
 	
-	public Map<Account, String> readAll() {
+	public Map<String, Account> readAll() {
 		return accountService.readAll();
+	}
+	
+	public void delete(String key) {
+		accountService.delete(key);
+	}
+	
+	public void update(Account account, String key) {
+		accountService.update(account, key);
 	}
 }

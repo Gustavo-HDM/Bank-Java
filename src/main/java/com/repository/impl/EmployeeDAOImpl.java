@@ -6,8 +6,8 @@ import java.util.List;
 import com.model.Employee;
 import com.repository.EmployeeDAO;
 
-public class EmployeeDAOImpl implements EmployeeDAO{
-	
+public class EmployeeDAOImpl implements EmployeeDAO {
+
 	private static List<Employee> employeeList = new ArrayList<>();
 
 	@Override
@@ -21,14 +21,21 @@ public class EmployeeDAOImpl implements EmployeeDAO{
 	}
 
 	@Override
-	public void delete(String cpf) {
-		// TODO Auto-generated method stub
-		
+	public void delete(String key) {
+		for (Employee employee : employeeList) {
+			if (employee.getCpf().equals(key)) {
+				employeeList.remove(employee);
+			}
+		}
 	}
 
 	@Override
-	public void update(Employee employee, String cpf) {
-		// TODO Auto-generated method stub
-		
+	public void update(Employee employee, String key) {
+		for (int i = 0; i < employeeList.size(); i++) {
+			Employee employeeListed = employeeList.get(i);
+			if (employeeListed.getCpf().equals(key)) {
+				employeeList.set(i, employee);
+			}
+		}
 	}
 }

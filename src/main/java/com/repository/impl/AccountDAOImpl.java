@@ -4,33 +4,43 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.model.Account;
+import com.model.Client;
 import com.repository.AccountDAO;
 
 public class AccountDAOImpl implements AccountDAO{
 
-	private static Map<Account, String> accountHash = new HashMap<>();
+	private static HashMap<String, Account> accountMap = new HashMap<>();
 	
 	@Override
 	public void create(Account object) {
-		accountHash.put(object, object.getCpf());
+		accountMap.put(object.getCpf(), object);
 		
 	}
 	
 	@Override
-	public Map<Account, String> readAll() {
-		return accountHash;
+	public Map<String, Account> readAll() {
+		return accountMap;
 	}
 
 	@Override
-	public void delete(String cpf) {
-		// TODO Auto-generated method stub
-		
+	public void delete(String key) {
+		for (Account account : accountMap.values()) {
+			if(account.getCpf().equals(key)) {
+				accountMap.remove(key);
+			}
+		}
 	}
 
 	@Override
-	public void update(Account account, String cpf) {
-		// TODO Auto-generated method stub
-		
+	public void update(Account account, String key) {
+		for (int i = 0; i < accountMap.values().size(); i++) {
+			Account accountListed = accountMap.get(key);
+			if(accountListed.getCpf().equals(key)) {
+				Account accountOld = accountMap.get(key);
+				Account accountNew = account;
+				accountMap.put(accountOld.getCpf(), accountNew);
+			}
+		}
 	}
 	
 }

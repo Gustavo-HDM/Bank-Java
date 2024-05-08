@@ -40,6 +40,8 @@ public class Employee extends Person{
 				"\nCidade: " + super.getCity() +
 				"\nFuncao: " + getFunction() + 
 				"\nSalario: " + getSalary() +
-				"\nNacionalidade: " + Employee.NACIONALITY;
+				"\nNacionalidade: " + Employee.NACIONALITY +
+				"\n-------------------------------------";
+					
 	}
 }

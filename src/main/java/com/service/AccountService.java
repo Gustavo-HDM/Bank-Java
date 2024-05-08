@@ -4,4 +4,4 @@ import java.util.Map;
 
 import com.model.Account;
 
-public interface AccountService extends GenericService<Account, String, Map<Account, String>>{}
+public interface AccountService extends GenericService<Account, String, Map<String, Account>>{}

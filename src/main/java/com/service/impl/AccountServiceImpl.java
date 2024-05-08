@@ -16,23 +16,17 @@ public class AccountServiceImpl implements AccountService{
 		this.accountDAO.create(object);		
 	}
 	@Override
-	public Map<Account, String> readAll() {
+	public Map<String, Account> readAll() {
 		return accountDAO.readAll();
 	}
 
 	@Override
-	public void delete(String cpf) {
-		// TODO Auto-generated method stub
-		
+	public void delete(String key) {
+		accountDAO.delete(key);
 	}
 
 	@Override
-	public void update(Account account, String cpf) {
-		// TODO Auto-generated method stub
-		
+	public void update(Account account, String key) {
+		accountDAO.update(account, key);
 	}
-
-	//REVER SE TEM ALGUMA FORMA MAIS OTIMIZADA
-
-
 }

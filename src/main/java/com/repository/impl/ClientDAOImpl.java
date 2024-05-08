@@ -43,10 +43,4 @@ public class ClientDAOImpl implements ClientDAO{
 			}
 		}
 	}
-
-//	List<Cliente> listaCliente = new ArrayList<>();
-//	List<Funcionario> listaFuncionario = new ArrayList<>();
-//	List<Conta> listaContas = new ArrayList<>();
-	//USAR LISTAS PARA CLIENTE E FUNCIONARIO OU PARA PESSOA?
-	//List<Pessoa> listaPessoas = new ArrayList<>();
 }

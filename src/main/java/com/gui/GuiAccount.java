@@ -21,44 +21,13 @@ public class GuiAccount {
 
 	public void accountMenu() {
 
-		System.out.println("\nEscolha uma opção a baixo\n" + "[1] Associar uma conta a um cliente\n"
-				+ "[2] Lista de Contas\n" + "[4] Voltar");
+		System.out.println("\nEscolha uma opção a baixo\n[1] Associar uma conta a um cliente\n"
+				+ "[2] Lista de Contas\n[3] ");
 		int opt = scan.nextInt();
 
 		switch (opt) {
 		case 1: {
-			System.out.println("Selecione o tipo da conta:\n" + "[1] Conta Corrente\n" + "[2] Conta Poupanca\n" + "[3] Conta Salario\n" + "[4] Conta Pagamento\n");
-			int typeResp = scan.nextInt();
-			
-			for(AccountType type : AccountType.values()) {
-				if(type.getMenuValue() == typeResp) {
-					account = type.getAccountImpl();
-					break;
-				}
-			}
-			
-//			if (typeResp == 1) {
-//				account = new CurrentAccount();
-//			} else if (typeResp == 2) {
-//				account = new SavingsAccount();
-//			} else if (typeResp == 3){
-//				//account.setAccountType(AccountType.POUPANCA);
-//			} else if (typeResp == 4) {
-//				//account.setAccountType(AccountType.PAGAMENTOS);
-//			} else {
-//				System.out.println("Resposta inválida");
-//				accountMenu();
-//			}
-			System.out.println("n da Agencia");
-			account.setAgency(scan.nextInt());
-			System.out.print("Saldo inicial: ");
-			account.setBalance(scan.nextDouble());
-			System.out.println("Selecione um cliente para associa a conta: ");
-			listingClient();
-			int clientIndex = scan.nextInt();
-			Client client = controllerClient.readAll().get(clientIndex - 1);
-			account.setCpf(client.getCpf());
-			controllerAccount.create(account);
+			add();
 			accountMenu();
 			break;
 		}
@@ -80,6 +49,28 @@ public class GuiAccount {
 		}
 	}
 
+	private void add() {
+		System.out.println("Selecione o tipo da conta:\n" + "[1] Conta Corrente\n" + "[2] Conta Poupanca\n" + "[3] Conta Salario\n" + "[4] Conta Pagamento\n");
+		int typeResp = scan.nextInt();
+		
+		for(AccountType type : AccountType.values()) {
+			if(type.getMenuValue() == typeResp) {
+				account = type.getAccountImpl();
+				break;
+			}
+		}
+		System.out.println("n da Agencia");
+		account.setAgency(scan.nextInt());
+		System.out.print("Saldo inicial: ");
+		account.setBalance(scan.nextDouble());
+		System.out.println("Selecione um cliente para associar a conta: ");
+		listingClient();
+		int clientIndex = scan.nextInt();
+		Client client = controllerClient.readAll().get(clientIndex - 1);
+		account.setCpf(client.getCpf());
+		controllerAccount.create(account);
+	}
+	
 	private void listing() {
 		for (Map.Entry<Account, String> entry : controllerAccount.readAll().entrySet()) {
 
@@ -95,7 +86,7 @@ public class GuiAccount {
 
 		}
 	}
-
+	
 	private void listingClient() {
 		int i = 1;
 		for (Client client : controllerClient.readAll()) {

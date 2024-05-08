@@ -36,7 +36,7 @@ public class GuiClient {
 		}
 		
 		case 4: {
-			remove();
+			delete();
 			clientMenu();
 			break;
 		}
@@ -70,24 +70,13 @@ public class GuiClient {
 	private void listing() {
 		int i = 1;
 		for (Client client : controller.readAll()) {
-			System.out.println("[" + i + "]" + client.toString());
+			System.out.println("\n[" + i + "]" + client.toString());
 			i++;
 		}
 	}
 	
-	private void remove() {
-		listing();
-		System.out.print("Selecione um cliente para ser removido: ");
-		int resp = scan.nextInt();
-		Client client = controller.readAll().get(resp);
-		String key = client.getCpf();
-		controller.delete(key);
-		System.out.println("\nCliente removido com sucesso");
-	}
-	
 	private void update() {
 		listing();
-		
 		System.out.print("Selecione um cliente que deseja alterar: ");
 		int resp = scan.nextInt();
 		Client client = controller.readAll().get(resp - 1);
@@ -104,5 +93,15 @@ public class GuiClient {
 		client.setCity(scan.next());
 		controller.update(client, key);
 		System.out.println("\nCliente alterado com sucesso");
+	}
+	
+	private void delete() {
+		listing();
+		System.out.print("Selecione um cliente para ser removido: ");
+		int resp = scan.nextInt();
+		Client client = controller.readAll().get(resp - 1);
+		String key = client.getCpf();
+		controller.delete(key);
+		System.out.println("\nCliente removido com sucesso");
 	}
 }

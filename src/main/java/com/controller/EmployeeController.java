@@ -18,5 +18,12 @@ public class EmployeeController {
 		return employeeService.readAll();
 	}
 	
+	public void update (Employee employee, String key) {
+		employeeService.update(employee, key);
+	}
+	
+	public void delete (String key) {
+		employeeService.delete(key);
+	}
 	
 }

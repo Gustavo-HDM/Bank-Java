@@ -13,6 +13,6 @@ public class Client extends Person {
 	public String toString() {
 
 		return "\nNome: " + super.getName() + "\nIdade: " + super.getAge() + "\nCPF: " + super.getCpf() + "\nCidade: "
-				+ super.getCity();
+				+ super.getCity() + "\n------------------------------------------";
 	}
 }

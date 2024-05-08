@@ -23,13 +23,11 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 	@Override
 	public void delete(String cpf) {
-		// TODO Auto-generated method stub
-		
+		this.employeeDAO.delete(cpf);
 	}
 
 	@Override
 	public void update(Employee employee, String cpf) {
-		// TODO Auto-generated method stub
-		
+		this.employeeDAO.update(employee, cpf);
 	}
 }

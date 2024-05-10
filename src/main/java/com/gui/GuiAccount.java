@@ -1,5 +1,6 @@
 package com.gui;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
@@ -16,7 +17,6 @@ public class GuiAccount {
 	GuiMenu mainMenu = new GuiMenu();
 	ClientController controllerClient = new ClientController();
 	AccountController controllerAccount = new AccountController();
-	List<Account> accountList;
 	Account account;
 
 	public void accountMenu() {
@@ -40,6 +40,12 @@ public class GuiAccount {
 
 		case 3: {
 			update();
+			accountMenu();
+			break;
+		}
+		
+		case 4: {
+			delete();
 			accountMenu();
 			break;
 		}
@@ -83,12 +89,13 @@ public class GuiAccount {
 			String cpf = entry.getKey();
 			account = entry.getValue();
 			System.out.print("\n" + account.toString() + "\nCliente associado a conta: ");
+			int i = 1;
 			for (Client client : controllerClient.readAll()) {
 				if (client.getCpf().equals(cpf)) {
-					System.out.println(client.toString() + "\n-----------------------------------------");
+					System.out.println("[" + i + "]" + client.toString() + "\n--------------------------------------");
+					i++;
 				}
 			}
-
 		}
 	}
 
@@ -99,9 +106,11 @@ public class GuiAccount {
 			i++;
 		}
 	}
-
+	
+	//TODO não alterar o dono da conta
 	private void update() {
 		listing();
+		List<Account> accountList = new ArrayList<>();
 		for (Map.Entry<String, Account> entry : controllerAccount.readAll().entrySet()) {
 			accountList.add(entry.getValue());
 		}
@@ -129,5 +138,17 @@ public class GuiAccount {
 		Client client = controllerClient.readAll().get(clientIndex - 1);
 		account.setCpf(client.getCpf());
 		controllerAccount.update(account, key);
+	}
+	
+	private void delete() {
+		listing();
+		List<Account> accountList = new ArrayList<>();
+		for (Map.Entry<String, Account> entry : controllerAccount.readAll().entrySet()) {
+			accountList.add(entry.getValue());
+		}
+		System.out.println("Selecione uma conta para deletar");
+		int resp = scan.nextInt();
+		Account account = accountList.get(resp - 1);
+		controllerAccount.delete(account.getCpf());
 	}
 }

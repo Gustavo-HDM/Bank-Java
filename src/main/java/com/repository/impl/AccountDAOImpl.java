@@ -32,14 +32,12 @@ public class AccountDAOImpl implements AccountDAO{
 
 	@Override
 	public void update(Account account, String key) {
-		for (int i = 0; i < accountMap.values().size(); i++) {
 			Account accountListed = accountMap.get(key);
 			if(accountListed.getCpf().equals(key)) {
 				Account accountOld = accountMap.get(key);
 				Account accountNew = account;
 				accountMap.put(accountOld.getCpf(), accountNew);
 			}
-		}
 	}
 	
 }

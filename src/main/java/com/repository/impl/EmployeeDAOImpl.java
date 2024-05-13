@@ -38,4 +38,10 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 			}
 		}
 	}
+
+	@Override
+	public Employee read(String key) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

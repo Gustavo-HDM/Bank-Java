@@ -25,6 +25,8 @@ public class AccountDAOImpl implements AccountDAO{
 		return accountMap;
 	}
 
+	
+	//TODO Ajeitar
 	@Override
 	public void delete(String key) {
 		for (Account account : accountMap.values()) {

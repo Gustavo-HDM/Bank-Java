@@ -29,4 +29,9 @@ public class AccountServiceImpl implements AccountService{
 	public void update(Account account, String key) {
 		accountDAO.update(account, key);
 	}
+	@Override
+	public Account read(String key) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

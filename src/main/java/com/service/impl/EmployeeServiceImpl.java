@@ -30,4 +30,10 @@ public class EmployeeServiceImpl implements EmployeeService {
 	public void update(Employee employee, String cpf) {
 		this.employeeDAO.update(employee, cpf);
 	}
+
+	@Override
+	public Employee read(String key) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

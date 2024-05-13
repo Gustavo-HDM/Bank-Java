@@ -2,6 +2,7 @@ package com.repository.impl;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 
 import com.model.Account;
 import com.repository.AccountDAO;
@@ -12,7 +13,10 @@ public class AccountDAOImpl implements AccountDAO{
 	
 	@Override
 	public void create(Account object) {
-		accountMap.put(object.getCpf(), object);
+		Random random = new Random();
+		int randomNumber = random.nextInt(100000);
+		String id = String.format("%06d", randomNumber);
+		accountMap.put(id, object);
 		
 	}
 	
@@ -39,5 +43,14 @@ public class AccountDAOImpl implements AccountDAO{
 				accountMap.put(accountOld.getCpf(), accountNew);
 			}
 	}
-	
+
+	@Override
+	public Account read(String key) {
+		for (Account account : accountMap.values()) {
+			if(account.getCpf().equals(key)) {
+				return accountMap.get(key);
+			}
+		}
+		return null;
+	}
 }

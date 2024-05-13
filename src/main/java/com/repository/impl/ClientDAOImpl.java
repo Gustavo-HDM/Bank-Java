@@ -27,20 +27,43 @@ public class ClientDAOImpl implements ClientDAO{
 
 	@Override
 	public void delete(String key) {
-		for (Client client : clientList) {
-			if(client.getCpf().equals(key)) {
-				clientList.remove(client);
-			}
-		}
+		
+		clientList.removeIf(client -> client.getCpf().equals(key));
+		
+//		for (Client client : clientList) {
+//			if(client.getCpf().equals(key)) {
+//				clientList.remove(client);
+//			}
+//		}
 	}
 
 	@Override
 	public void update(Client client, String key) {
-		for (int i = 0; i < clientList.size(); i++) {
-			Client clientListed = clientList.get(i);
+		clientList.replaceAll(clientLambda -> {
+		    if (clientLambda.getCpf().equals(key)) {
+		        return client;
+		    } else {
+		        return null;
+		    }
+		});
+		}
+		
+//		for (int i = 0; i < clientList.size(); i++) {
+//			Client clientListed = clientList.get(i);
+//			if(clientListed.getCpf().equals(key)) {
+//				clientList.set(i, client);
+//			}
+//		}
+//	}
+
+	@Override
+	public Client read(String key) {
+		
+		for(Client clientListed : clientList) {
 			if(clientListed.getCpf().equals(key)) {
-				clientList.set(i, client);
+				return clientListed;
 			}
 		}
+		return null;
 	}
 }

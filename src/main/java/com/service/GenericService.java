@@ -5,4 +5,5 @@ public interface GenericService <T, E, L> {
 	public void delete(E key);
 	public void update(T object, E key);
 	public L readAll();
+	public T read(E key);
 }

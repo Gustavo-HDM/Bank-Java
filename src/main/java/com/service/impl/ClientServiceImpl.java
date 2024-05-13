@@ -31,4 +31,10 @@ public class ClientServiceImpl implements ClientService{
 		this.clientDAO.update(cliente, cpf);
 		
 	}
+
+	@Override
+	public Client read(String key) {
+		return this.clientDAO.read(key);
+		
+	}
 }

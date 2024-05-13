@@ -25,4 +25,8 @@ public class ClientController {
 	public void update(Client client, String key) {
 		clientService.update(client, key);
 	}
+	
+	public Client read(String key) {
+		return clientService.read(key);
+	}
 }

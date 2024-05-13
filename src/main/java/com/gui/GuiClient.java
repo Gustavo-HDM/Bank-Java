@@ -11,6 +11,7 @@ public class GuiClient {
 	GuiMenu mainMenu = new GuiMenu();
 	ClientController controller = new ClientController();
 	
+	//TODO aplicar lambda
 	public void clientMenu() {
 
 		System.out.println("\nMenu Clientes\n[1] Adicionar\n[2] Consultar\n[3] Alterar\n[4] Excluir\n[5] Voltar");
@@ -68,6 +69,7 @@ public class GuiClient {
 	}
 
 	private void listing() {
+		
 		int i = 1;
 		for (Client client : controller.readAll()) {
 			System.out.println("\n[" + i + "]" + client.toString());

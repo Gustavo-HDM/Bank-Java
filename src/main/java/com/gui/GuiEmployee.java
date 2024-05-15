@@ -85,7 +85,7 @@ public class GuiEmployee {
 		listing();
 		System.out.println("Selecione um funcionario que deseja alterar: ");
 		int resp = scan.nextInt();
-		Employee employee = controller.readAll().get(resp - 1);
+		Employee employee = controller.readAll()[resp - 1];
 		String key = employee.getCpf();
 		
 		System.out.println("Preencha os dados a baixo para adicionar um novo funcionario" + "\n");
@@ -120,7 +120,7 @@ public class GuiEmployee {
 		listing();
 		System.out.println("Selecione um funcionario para ser removido: ");
 		int resp = scan.nextInt();
-		Employee employee = controller.readAll().get(resp - 1);
+		Employee employee = controller.readAll()[resp - 1];
 		String key = employee.getCpf();
 		controller.delete(key);
 		System.out.println("\nFuncionario removido com sucesso");

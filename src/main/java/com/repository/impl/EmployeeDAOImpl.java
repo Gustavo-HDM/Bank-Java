@@ -1,6 +1,7 @@
 package com.repository.impl;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import com.model.Employee;
@@ -8,40 +9,49 @@ import com.repository.EmployeeDAO;
 
 public class EmployeeDAOImpl implements EmployeeDAO {
 
-	private static List<Employee> employeeList = new ArrayList<>();
+	private static Employee[] employeeList = new Employee[0];
 
 	@Override
 	public void create(Employee employee) {
-		employeeList.add(employee);
+		int newSize = employeeList.length + 1;
+		employeeList = Arrays.copyOf(employeeList, newSize);
+		employeeList[newSize - 1] = employee;
 	}
 
 	@Override
-	public List<Employee> readAll() {
+	public Employee[] readAll() {
 		return employeeList;
 	}
 
+	//TODO tentar aplicar a busca binaria
 	@Override
 	public void delete(String key) {
-		for (Employee employee : employeeList) {
-			if (employee.getCpf().equals(key)) {
-				employeeList.remove(employee);
+		for(int i = 0; i < employeeList.length; i++) {
+			if(employeeList[i].getCpf().equals(key)) {
+				for (int j = i; j < employeeList.length - 1; i++) {
+					employeeList[j] = employeeList[j - 1];
+				}
+				employeeList = Arrays.copyOf(employeeList, employeeList.length);
 			}
 		}
 	}
 
 	@Override
 	public void update(Employee employee, String key) {
-		for (int i = 0; i < employeeList.size(); i++) {
-			Employee employeeListed = employeeList.get(i);
-			if (employeeListed.getCpf().equals(key)) {
-				employeeList.set(i, employee);
+		for(int i = 0; i < employeeList.length; i++) {
+			if(employeeList[i].getCpf().equals(key)) {
+				employeeList[i] = employee;
 			}
 		}
 	}
 
 	@Override
 	public Employee read(String key) {
-		// TODO Auto-generated method stub
+		for(int i = 0; i < employeeList.length; i++) {
+			if(employeeList[i].getCpf().equals(key)) {
+				return employeeList[i];
+			}
+		}
 		return null;
 	}
 }

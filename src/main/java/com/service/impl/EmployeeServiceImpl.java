@@ -1,7 +1,5 @@
 package com.service.impl;
 
-import java.util.List;
-
 import com.model.Employee;
 import com.repository.EmployeeDAO;
 import com.repository.impl.EmployeeDAOImpl;
@@ -17,7 +15,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 	}
 
 	@Override
-	public List<Employee> readAll() {
+	public Employee[] readAll() {
 		return employeeDAO.readAll();
 	}
 

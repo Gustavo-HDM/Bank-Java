@@ -1,7 +1,5 @@
 package com.controller;
 
-import java.util.List;
-
 import com.model.Employee;
 import com.service.EmployeeService;
 import com.service.impl.EmployeeServiceImpl;
@@ -14,7 +12,7 @@ public class EmployeeController {
 		employeeService.create(employee);
 	}
 
-	public List<Employee> readAll() {
+	public Employee[] readAll() {
 		return employeeService.readAll();
 	}
 	
@@ -24,6 +22,10 @@ public class EmployeeController {
 	
 	public void delete (String key) {
 		employeeService.delete(key);
+	}
+	
+	public void read (String key) {
+		employeeService.read(key);
 	}
 	
 }

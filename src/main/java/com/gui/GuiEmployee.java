@@ -37,6 +37,12 @@ public class GuiEmployee {
 		case 4: {
 			delete();
 			employeeMenu();
+			break;
+		}
+		
+		case 5: {
+			mainMenu.mainMenu();
+			break;
 		}
 		default:
 			System.out.println("Opcao Inválida");

@@ -7,6 +7,8 @@ import java.util.List;
 import com.model.Client;
 import com.repository.ClientDAO;
 
+import exceptions.CpfLengthException;
+
 public class ClientDAOImpl implements ClientDAO{
 
 	private static List<Client> clientList = new ArrayList<Client>();
@@ -16,7 +18,7 @@ public class ClientDAOImpl implements ClientDAO{
 	}
 
 	@Override
-	public void create(Client client) {
+	public void create(Client client){
 		ClientDAOImpl.clientList.add(client);
 	}
 
@@ -27,14 +29,7 @@ public class ClientDAOImpl implements ClientDAO{
 
 	@Override
 	public void delete(String key) {
-		
 		clientList.removeIf(client -> client.getCpf().equals(key));
-		
-//		for (Client client : clientList) {
-//			if(client.getCpf().equals(key)) {
-//				clientList.remove(client);
-//			}
-//		}
 	}
 
 	@Override
@@ -48,14 +43,6 @@ public class ClientDAOImpl implements ClientDAO{
 		});
 		}
 		
-//		for (int i = 0; i < clientList.size(); i++) {
-//			Client clientListed = clientList.get(i);
-//			if(clientListed.getCpf().equals(key)) {
-//				clientList.set(i, client);
-//			}
-//		}
-//	}
-
 	@Override
 	public Client read(String key) {
 		

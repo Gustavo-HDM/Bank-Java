@@ -7,12 +7,17 @@ import com.repository.ClientDAO;
 import com.repository.impl.ClientDAOImpl;
 import com.service.ClientService;
 
-public class ClientServiceImpl implements ClientService{
+import exceptions.CpfLengthException;
+
+public class ClientServiceImpl implements ClientService {
 
 	private ClientDAO clientDAO = new ClientDAOImpl();
-	
+
 	@Override
-	public void create(Client client) {
+	public void create(Client client) throws CpfLengthException {
+		if (client.getCpf().length() != 11) {
+			throw new CpfLengthException("O CPF deve conter 11 digitos");
+		}
 		this.clientDAO.create(client);
 	}
 
@@ -29,12 +34,11 @@ public class ClientServiceImpl implements ClientService{
 	@Override
 	public void update(Client cliente, String cpf) {
 		this.clientDAO.update(cliente, cpf);
-		
+
 	}
 
 	@Override
 	public Client read(String key) {
 		return this.clientDAO.read(key);
-		
 	}
 }

@@ -5,6 +5,8 @@ import java.util.Scanner;
 import com.controller.ClientController;
 import com.model.Client;
 
+import exceptions.CpfLengthException;
+
 public class GuiClient {
 
 	Scanner scan = new Scanner(System.in);
@@ -64,8 +66,16 @@ public class GuiClient {
 		client.setCpf(scan.next());
 		System.out.print("Cidade: ");
 		client.setCity(scan.next());
+		try {
 		controller.create(client);
 		System.out.println("\nCadastro realizado com sucesso");
+		} catch (CpfLengthException e) {
+			System.out.println(e.getMessage());
+		} catch (NullPointerException e) {
+			System.out.println("Valores nulos");
+		} finally {
+			clientMenu();
+		}
 	}
 
 	private void listing() {
